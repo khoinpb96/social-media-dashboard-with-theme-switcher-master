@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+$pri1: hsl(163, 72%, 41%);
+$pri2: hsl(356, 69%, 56%);
+
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+
+$youTube: hsl(348, 97%, 39%);
+// #### Dark Theme
+
+// - Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+
+// #### Light Theme
+
+// - Toggle: hsl(230, 22%, 74%);
+
+// #### Dark Theme
+$bg: hsl(230, 17%, 14%);
+$topBGPattern: hsl(232, 19%, 15%);
+$cardBG: hsl(228, 28%, 20%);
+$text: hsl(228, 34%, 66%);
+
+// #### Light Theme
+$topBGPattern2: hsl(225, 100%, 98%);
+$cardBG2: hsl(227, 47%, 96%);
+$text2: hsl(228, 12%, 44%);
+$text3: hsl(230, 17%, 14%);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  user-select: none;
+}
+
+body,
+h2,
+h3,
+grid-item,
+p {
+  transition: 0.5s;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+.container {
+  max-width: 968px;
+  margin: 1rem auto;
+}
+.hder {
+  display: flex;
+  justify-content: space-between;
+  p,
+  label {
+    font-size: 12px;
+    font-weight: 700;
+    color: $text2;
+  }
+  margin-bottom: 38px;
+}
+label {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  input {
+    transform: scale(0);
+    width: 54px;
+    height: 22px;
+  }
+  .checkmark {
+    position: absolute;
+    right: 0;
+    width: 42px;
+    height: 22px;
+    background: #aeb2cb;
+    border-radius: 5rem;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #f2f2fe;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%) translateX(-4px);
+      transition: 0.5s;
+    }
+  }
+  input:checked ~ .checkmark {
+    background: linear-gradient(270deg, #4eca94 0%, #3f96cc 105.95%);
+  }
+  input:checked ~ .checkmark::after {
+    transform: translateY(-50%) translateX(-22px);
+  }
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  &__item {
+    background: $cardBG2;
+    padding: 22px;
+    border-radius: 6px;
+    text-align: center;
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .name {
+        font-size: 12px;
+        font-weight: 700;
+        color: $text2;
+        margin-left: 0.5rem;
+      }
+      .upDown {
+        height: 4px;
+        width: 8px;
+        margin-right: 2px;
+      }
+    }
+    img {
+      width: 18px;
+      height: 18px;
+    }
+    h3 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-top: 24px;
+    }
+    .desc {
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: $text2;
+      margin-bottom: 24px;
+    }
+    .static {
+      font-size: 10px;
+      font-weight: 700;
+      color: $pri1;
+    }
+    &:nth-child(1) {
+      border-top: 3px solid $facebook;
+      .static {
+        color: $pri1;
+      }
+    }
+    &:nth-child(2) {
+      border-top: 3px solid $twitter;
+      .static {
+        color: $pri1;
+      }
+    }
+    &:nth-child(3) {
+      border-top: 3px solid #df4996;
+      .static {
+        color: $pri1;
+      }
+    }
+    &:nth-child(4) {
+      border-top: 3px solid $youTube;
+      .static {
+        color: $pri2;
+      }
+    }
+  }
+}
+.overview {
+  font-size: 18px;
+  margin: 44px 0 26px;
+  color: $text2;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  &__item {
+    background: $cardBG2;
+    padding: 22px;
+    border-radius: 6px;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        font-size: 12px;
+        font-weight: 700;
+        color: $text2;
+        margin-bottom: 24px;
+      }
+      .sc {
+        width: 18px;
+        height: 18px;
+        margin-bottom: 24px;
+      }
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .up,
+      .down {
+        height: 4px;
+        width: 6px;
+        margin-left: auto;
+        margin-right: 2px;
+        transform: translateY(2px);
+      }
+
+      span {
+        font-size: 10px;
+        font-weight: 700;
+        color: $pri1;
+        transform: translateY(2px);
+
+        &.d {
+          color: $pri2;
+        }
+      }
+    }
+  }
+}
+.darkH {
+  color: white;
+}
+.darkP {
+  color: $text;
+}
+.darkBG {
+  background: $bg;
+}
+.darkCard {
+  background: $cardBG;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 85%;
+  }
+  .hder {
+    flex-direction: column;
+    p {
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+    label {
+      padding-top: 20px;
+      border-top: 1px solid;
+    }
+  }
+  .grid1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .overview {
+    font-size: 24px;
+  }
+  .grid2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
